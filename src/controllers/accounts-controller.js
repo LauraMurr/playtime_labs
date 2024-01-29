@@ -1,5 +1,6 @@
 /* eslint-disable func-names */
 import { db } from "../models/db.js";
+import { UserSpec, } from "../models/joi-schemas.js";
 
 export const accountsController = {
   index: {
@@ -8,20 +9,29 @@ export const accountsController = {
       return h.view("main", { title: "Welcome to Playlist" });
     },
   },
+
   showSignup: {
     auth: false,
     handler: function (request, h) {
       return h.view("signup-view", { title: "Sign up for Playlist" });
     },
   },
+
   signup: {
     auth: false,
+    validate: {
+      payload: UserSpec,
+      failAction: function (request, h, error) {
+        return h.view("signup-view", { title: "Sign up error" }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const user = request.payload;
       await db.userStore.addUser(user);
       return h.redirect("/");
     },
   },
+
   showLogin: {
     auth: false,
     handler: function (request, h) {
@@ -40,8 +50,10 @@ export const accountsController = {
       return h.redirect("/dashboard");
     },
   },
+
   logout: {
     handler: function (request, h) {
+      request.cookieAuth.clear();
       return h.redirect("/");
     },
   },
@@ -53,4 +65,5 @@ export const accountsController = {
     }
     return { isValid: true, credentials: user };
   },
+  
 };
