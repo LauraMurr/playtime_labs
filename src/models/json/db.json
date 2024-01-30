@@ -1,0 +1,48 @@
+{
+  "users": [
+    {
+      "firstName": "Laura",
+      "lastName": "Murray",
+      "email": "homer@simpson.com",
+      "password": "test",
+      "_id": "13db8762-84ca-469b-a1d3-9f7cfb165283"
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "test",
+      "_id": "25aad182-ad9c-4311-8d12-662057fc29fa"
+    },
+    {
+      "firstName": "Homer",
+      "lastName": "Simpson",
+      "email": "homer@simpson.com",
+      "password": "HM%DezFek!a?2iU",
+      "_id": "4d3e20e1-2db2-4a2f-8a3f-e328e83bd337"
+    },
+    {
+      "firstName": "Bart",
+      "lastName": "Simpson",
+      "email": "bart@simpson.com",
+      "password": "59bejNmcpqNpD7C",
+      "_id": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20"
+    }
+  ],
+  "playlists": [
+    {
+      "userid": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20",
+      "title": "Beethoven Piano Sonatas",
+      "_id": "e93dc3d4-2b72-4d38-8620-8e6e73cbd081"
+    }
+  ],
+  "tracks": [
+    {
+      "title": "Piano Sonata no 7",
+      "artist": "Beethoven",
+      "duration": 57,
+      "_id": "37b30607-6e22-46ba-a0df-76b5cdc3b3ac",
+      "playlistid": "e93dc3d4-2b72-4d38-8620-8e6e73cbd081"
+    }
+  ]
+}
