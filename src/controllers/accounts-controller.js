@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 import { db } from "../models/db.js";
-import { UserSpec, } from "../models/joi-schemas.js";
+import { LoginSpec, UserSpec, } from "../models/joi-schemas.js";
 
 export const accountsController = {
   index: {
@@ -39,13 +39,24 @@ export const accountsController = {
       return h.view("login-view", { title: "Login to Playlist" });
     },
   },
+  
   login: {
     auth: false,
+    validate: {
+      payload: LoginSpec, // find details in joi-schemas.js
+      options: {abortEarly: false },
+      failAction: function (request, h, error) {
+        // Joi validation errors
+        return h.view("login-view", { title: "Login error", errors: error.details }).takeover().code(400);
+      },
+    },
     handler: async function (request, h) {
       const { email, password } = request.payload;
       const user = await db.userStore.getUserByEmail(email);
       if (!user || user.password !== password) {
-        return h.redirect("/");
+        // custom error if authenication failed (not in labs)
+        const errors = [{ message: "Invalid email or password, try again." }];
+        return h.view("login-view", { title: "Login Error", errors: errors });
       }
       request.cookieAuth.set({ id: user._id });
       return h.redirect("/dashboard");
