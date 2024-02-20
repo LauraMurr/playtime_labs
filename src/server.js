@@ -9,6 +9,7 @@ import { db } from "./models/db.js";
 import { accountsController } from "./controllers/accounts-controller.js";
 import dotenv from "dotenv";
 import Joi from "joi";
+import Inert from '@hapi/inert';
 
 
 const result = dotenv.config();
@@ -27,6 +28,7 @@ async function init() {
 
   await server.register(Vision);
   await server.register(Cookie);
+  await server.register(Inert);
   server.validator(Joi);
 
   server.views({
@@ -53,6 +55,19 @@ async function init() {
   server.auth.default("session");
 
   db.init();
+
+  server.route({
+    method: 'GET',
+    path: '/public/images/{param*}',
+    handler: {
+      directory: {
+        path: path.join(__dirname, '/public/images'),
+        listing: false,
+        index: false,
+      },
+    },
+  });
+
   server.route(webRoutes);
   await server.start();
   console.log("Server running on %s", server.info.uri);

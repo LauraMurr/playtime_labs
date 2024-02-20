@@ -4,36 +4,8 @@
       "firstName": "Laura",
       "lastName": "Murray",
       "email": "homer@simpson.com",
-      "password": "test",
-      "_id": "13db8762-84ca-469b-a1d3-9f7cfb165283"
-    },
-    {
-      "firstName": "Homer",
-      "lastName": "Simpson",
-      "email": "homer@simpson.com",
-      "password": "test",
-      "_id": "25aad182-ad9c-4311-8d12-662057fc29fa"
-    },
-    {
-      "firstName": "Homer",
-      "lastName": "Simpson",
-      "email": "homer@simpson.com",
       "password": "HM%DezFek!a?2iU",
-      "_id": "4d3e20e1-2db2-4a2f-8a3f-e328e83bd337"
-    },
-    {
-      "firstName": "Bart",
-      "lastName": "Simpson",
-      "email": "bart@simpson.com",
-      "password": "59bejNmcpqNpD7C",
-      "_id": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20"
-    },
-    {
-      "firstName": "Brian",
-      "lastName": "Murray",
-      "email": "i0041974@gmail.co",
-      "password": "xxx",
-      "_id": "9da2db05-d9ba-4b20-b7f9-54770578f069"
+      "_id": "881bed12-2148-4c6f-917d-b4a5343e8349"
     }
   ],
   "playlists": [
