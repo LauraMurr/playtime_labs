@@ -1,6 +1,6 @@
 /* eslint-disable func-names */
 import { db } from "../models/db.js";
-import { LoginSpec, UserSpec, } from "../models/joi-schemas.js";
+import { UserCredentialsSpec, UserSpec, } from "../models/joi-schemas.js";
 
 export const accountsController = {
   index: {
@@ -43,7 +43,7 @@ export const accountsController = {
   login: {
     auth: false,
     validate: {
-      payload: LoginSpec, // find details in joi-schemas.js
+      payload: UserCredentialsSpec, // find details in joi-schemas.js
       options: {abortEarly: false },
       failAction: function (request, h, error) {
         // Joi validation errors

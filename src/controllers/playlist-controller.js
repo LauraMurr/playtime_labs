@@ -17,8 +17,13 @@ export const playlistController = {
     validate: {
       payload: TrackSpec,
       options: {abortEarly: false},
-      failAction: function (request, h, error) {
-        return h.view("playlist-view", { title: "Input Error", errors: error.details }).takeover().code(400);
+      failAction: async function (request, h, error) {
+        const playlist = await db.playlistStore.getPlaylistById(request.params.id);
+        return h.view("playlist-view", {
+          title: "Input Error",
+          errors: error.details,
+          playlist: playlist // Include the playlist in the context
+        }).takeover().code(400);
       },
     },
     handler: async function (request, h) {

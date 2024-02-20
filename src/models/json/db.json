@@ -27,6 +27,13 @@
       "email": "bart@simpson.com",
       "password": "59bejNmcpqNpD7C",
       "_id": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20"
+    },
+    {
+      "firstName": "Brian",
+      "lastName": "Murray",
+      "email": "i0041974@gmail.co",
+      "password": "xxx",
+      "_id": "9da2db05-d9ba-4b20-b7f9-54770578f069"
     }
   ],
   "playlists": [
@@ -39,6 +46,11 @@
       "userid": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20",
       "title": "Test",
       "_id": "c327da86-0613-4627-a58b-3169d924bb7e"
+    },
+    {
+      "userid": "b8757f8f-fa1a-4f9e-bb0f-ccb5f98ccb20",
+      "title": "Test",
+      "_id": "fb868a89-5407-4a38-babb-ae3695e4b1af"
     }
   ],
   "tracks": [
@@ -50,17 +62,10 @@
       "playlistid": "e93dc3d4-2b72-4d38-8620-8e6e73cbd081"
     },
     {
-      "title": "tst",
-      "artist": "tst",
-      "duration": 2,
-      "_id": "bac0045f-555a-4399-a289-dfd1d3004c22",
-      "playlistid": "e93dc3d4-2b72-4d38-8620-8e6e73cbd081"
-    },
-    {
-      "title": "test",
-      "artist": "test",
-      "duration": 33,
-      "_id": "7bb7cda1-4c2d-46f7-a49e-05c523ae2b56",
+      "title": "x",
+      "artist": "x",
+      "duration": 1,
+      "_id": "4d6d9d0f-96d6-4231-b3c5-e0ba17c80cf6",
       "playlistid": "e93dc3d4-2b72-4d38-8620-8e6e73cbd081"
     }
   ]
