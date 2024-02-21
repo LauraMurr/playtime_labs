@@ -12,6 +12,7 @@ export const db = {
   userStore: null,
   playlistStore: null,
   trackStore: null,
+  
 
   init() {
     this.userStore = userJsonStore;
